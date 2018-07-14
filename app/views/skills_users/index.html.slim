@@ -1,0 +1,23 @@
+h1 Listing skills_users
+
+table
+  thead
+    tr
+      th Skill
+      th User
+      th
+      th
+      th
+
+  tbody
+    - @skills_users.each do |skills_user|
+      tr
+        td = skills_user.skill_id
+        td = skills_user.user_id
+        td = link_to 'Show', skills_user
+        td = link_to 'Edit', edit_skills_user_path(skills_user)
+        td = link_to 'Destroy', skills_user, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Skills user', new_skills_user_path

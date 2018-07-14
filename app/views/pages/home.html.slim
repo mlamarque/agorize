@@ -1,0 +1,21 @@
+h1 Parents Skills
+
+table
+  thead
+    tr
+      th Name
+      th Parent
+      th Points
+      th Users
+      th
+
+  tbody
+    - Skill.only_parents.each do |skill|
+      tr
+        td = skill.id
+        td = skill.name
+        td = skill.users_and_users_skills.count
+        td = skill.users_and_users_skills.map(&:points).sum
+
+= render file: "users/index"
+= render file: "skills/index"
